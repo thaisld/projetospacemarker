@@ -9,6 +9,11 @@ fundo = pygame.image.load("galaxia_.jpg")
 display = pygame.display.set_mode(tamanho)
 pygame.display.set_caption("SPACE MARKER")
 running = True
+
+pygame.mixer.init()
+musica_de_fundo = pygame.mixer.music.load('Space_Machine_Power.wav')
+pygame.mixer.music.play(-1)
+
 def nomeEstrela(pos):
     root = tk.Tk()
     root.withdraw()
