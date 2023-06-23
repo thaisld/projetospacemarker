@@ -31,7 +31,12 @@ while running:
             if event.button == 1:  # Botão esquerdo do mouse
                 mouse_pos = pygame.mouse.get_pos()
                 nomeEstrela(mouse_pos)
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_ESCAPE:  # Tecla ESC para sair
+                running = false
+                
     display.fill(preto)
     display.blit(fundo, (0, 0))
     pygame.display.update()
+    
 pygame.quit()
