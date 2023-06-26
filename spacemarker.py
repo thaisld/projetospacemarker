@@ -22,7 +22,11 @@ def nomeEstrela(pos):
     if nome:
         print(f"Nome da estrela: {nome}")
         print(f"Posição do clique: {pos}")
-
+     else:
+        nome = f"desconhecido {pos}"
+        marcacoes_estrelas.append((f"{nome} {pos}", pos))
+        print(f"Nome da estrela: {nome} {pos}")
+         
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -37,6 +41,15 @@ while running:
                 
     display.fill(preto)
     display.blit(fundo, (0, 0))
+    pygame.display.update()
+
+    # Desenha as marcações na tela
+    for nome, pos in marcacoes_estrelas:
+        pygame.draw.circle(display, (255, 255, 255), pos, 5)
+        fonte = pygame.font.Font(None, 20)
+        texto = fonte.render(nome, True, (255, 255, 255))
+        display.blit(texto, (pos[0] + 10, pos[1] - 10))
+
     pygame.display.update()
     
 pygame.quit()
