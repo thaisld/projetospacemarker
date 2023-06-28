@@ -6,7 +6,7 @@ pygame.init()
 
 tamanho = (900, 600)
 preto = (0, 0, 0)
-fundo = pygame.image.load("galaxia_.jpg")
+fundo = pygame.image.load("galaxia.png")
 display = pygame.display.set_mode(tamanho)
 pygame.display.set_caption("SPACE MARKER")
 running = True
